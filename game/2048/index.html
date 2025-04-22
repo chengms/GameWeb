@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 - GameTime</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/theme.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/index.html" class="logo">GAMETIME</a>
+            <div class="nav-links">
+                <a href="/pages/2048-game.html">Back to Info</a>
+                <a href="/index.html">Back to Home</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Game Main Container -->
+    <div class="game-wrapper">
+        <!-- Game Area -->
+        <div class="container">
+            <div class="heading">
+                <div class="scores-container">
+                    <div class="score-box">
+                        <div class="score-label">Score</div>
+                        <div class="score-container">0</div>
+                    </div>
+                    <div class="best-box">
+                        <div class="best-label">Best</div>
+                        <div class="best-container">0</div>
+                    </div>
+                </div>
+                <div class="game-controls">
+                    <button class="retry-button">New Game</button>
+                </div>
+            </div>
+
+            <div class="game-container">
+                <div class="game-message">
+                    <p></p>
+                    <div class="lower">
+                        <a class="retry-button">Try Again</a>
+                        <div class="keep-playing-button">Keep Playing</div>
+                    </div>
+                </div>
+                
+                <div class="grid-background">
+                    <div class="grid-row">
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                    </div>
+                </div>
+                <div class="tile-container"></div>
+            </div>
+
+            <!-- Instructions below the game area -->
+            <div class="instructions">
+                <h3>How to Play</h3>
+                <div class="controls-list">
+                    <div class="control-item">↑ : Move Up</div>
+                    <div class="control-item">↓ : Move Down</div>
+                    <div class="control-item">← : Move Left</div>
+                    <div class="control-item">→ : Move Right</div>
+                    <div class="control-item">W, S, A, D keys can also control direction</div>
+                    <div class="control-item">Tiles with the same number merge when they collide</div>
+                    <div class="control-item">Reach 2048 to win!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

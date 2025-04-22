@@ -1,0 +1,397 @@
+/* Global Theme Variables */
+:root {
+    /* Primary Colors */
+    --primary-color: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #60a5fa;
+
+    /* Secondary Colors */
+    --secondary-color: #10b981;
+    --secondary-dark: #059669;
+    --secondary-light: #34d399;
+
+    /* Neutral Colors */
+    --background-color: #f3f4f6;
+    --surface-color: #ffffff;
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+
+    /* Accent Colors */
+    --accent-color: #f59e0b;
+    --accent-dark: #d97706;
+    --accent-light: #fbbf24;
+
+    /* System Colors */
+    --error-color: #ef4444;
+    --success-color: #22c55e;
+    --warning-color: #f59e0b;
+    --info-color: #3b82f6;
+
+    /* Typography */
+    --font-primary: 'Orbitron', sans-serif;
+    --font-secondary: 'Arial', sans-serif;
+    --font-size-base: 16px;
+    --line-height-base: 1.5;
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+
+    /* Border Radius */
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 1rem;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+    /* Transitions */
+    --transition-fast: 150ms ease-in-out;
+    --transition-normal: 300ms ease-in-out;
+    --transition-slow: 500ms ease-in-out;
+}
+
+/* Base Styles */
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--text-primary);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Typography Styles */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+    margin-top: 0;
+}
+
+p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-fast);
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-dark);
+}
+
+/* Card Styles */
+.card {
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-md);
+}
+
+/* Form Styles */
+input, textarea, select {
+    padding: var(--spacing-sm);
+    border: 1px solid var(--text-secondary);
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-secondary);
+    transition: var(--transition-fast);
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.text-primary {
+    color: var(--primary-color);
+}
+
+.text-secondary {
+    color: var(--secondary-color);
+}
+
+.bg-primary {
+    background-color: var(--primary-color);
+}
+
+.bg-secondary {
+    background-color: var(--secondary-color);
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn var(--transition-normal);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 标题样式优化 */
+h1, h2, h3, h4, h5, h6, .logo, .nav-links a, button {
+  /* 使用系统默认无衬线字体 */
+  font-family: 'Orbitron', Arial, sans-serif !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  margin-bottom: 1rem !important;
+  position: relative !important;
+  padding-left: 1rem !important;
+}
+
+h1::before, h2::before, h3::before {
+  content: '' !important;
+  position: absolute !important;
+  left: 0 !important;
+  height: 100% !important;
+  width: 4px !important;
+  background: var(--secondary-color) !important;
+}
+
+/* 按钮样式优化 */
+.button, button, input[type="submit"] {
+  background: linear-gradient(145deg, #2a2a2a, #1a1a1a) !important;
+  border: 2px solid var(--border-color) !important;
+  color: var(--primary-color) !important;
+  padding: 0.8em 1.5em !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.button:hover, button:hover, input[type="submit"]:hover {
+  background: var(--secondary-color) !important;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* 输入框样式优化 */
+input[type="text"], input[type="email"], input[type="password"], textarea, select {
+  background-color: rgba(42, 42, 42, 0.8) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-color) !important;
+  padding: 0.8em !important;
+  border-radius: 4px !important;
+  transition: all 0.3s ease !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none !important;
+  border-color: var(--secondary-color) !important;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.2) !important;
+}
+
+/* 卡片样式优化 */
+.card {
+  background-color: #1a1a1a !important;
+  border: 1px solid var(--border-color) !important;
+  padding: 1.5rem !important;
+  margin: 1rem 0 !important;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.1) !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+}
+
+.card::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, var(--border-color), transparent) !important;
+}
+
+.card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2) !important;
+}
+
+/* 链接样式优化 */
+a {
+  color: var(--primary-color) !important;
+  text-decoration: none !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+}
+
+a:hover {
+  color: var(--hover-color) !important;
+  text-shadow: 0 0 5px var(--primary-color) !important;
+}
+
+/* 列表样式优化 */
+ul, ol {
+  padding-left: 1.2rem !important;
+}
+
+li {
+  margin: 0.5rem 0 !important;
+  position: relative !important;
+}
+
+/* 表格样式优化 */
+table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 1rem 0 !important;
+}
+
+th, td {
+  padding: 1rem !important;
+  border: 1px solid var(--border-color) !important;
+  background: rgba(26, 26, 26, 0.6) !important;
+}
+
+th {
+  background: var(--secondary-color) !important;
+  color: var(--primary-color) !important;
+  text-transform: uppercase !important;
+}
+
+/* 添加红警特色的警示条纹 */
+.warning-section {
+  position: relative !important;
+  padding: 1rem !important;
+  margin: 1rem 0 !important;
+  border-left: 4px solid var(--secondary-color) !important;
+  background: linear-gradient(45deg,
+    rgba(196, 30, 58, 0.1) 25%,
+    rgba(26, 26, 26, 0.1) 25%,
+    rgba(26, 26, 26, 0.1) 50%,
+    rgba(196, 30, 58, 0.1) 50%,
+    rgba(196, 30, 58, 0.1) 75%,
+    rgba(26, 26, 26, 0.1) 75%,
+    rgba(26, 26, 26, 0.1)
+  ) !important;
+  background-size: 4px 4px !important;
+}
+
+/* 修改顶部和底部区域的颜色 */
+header, footer {
+  background-color: #1a1a1a !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+/* 修改游戏卡片的样式 */
+.card, .game-card {
+  background-color: #1a1a1a !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+.card:hover, .game-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2) !important;
+}
+
+/* 修改游戏卡片内的文字颜色 */
+.card h3, .game-card h3, 
+.card p, .game-card p {
+  color: var(--text-color) !important;
+}
+
+/* 游戏标题样式 */
+.game-title {
+  color: var(--primary-color) !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  margin: 10px 0 !important;
+}
+
+/* PLAY NOW 按钮样式 */
+.play-now-btn {
+  background: linear-gradient(145deg, #2a2a2a, #1a1a1a) !important;
+  border: 2px solid var(--border-color) !important;
+  color: var(--primary-color) !important;
+  text-transform: uppercase !important;
+  padding: 10px 20px !important;
+  transition: all 0.3s ease !important;
+}
+
+.play-now-btn:hover {
+  background: var(--secondary-color) !important;
+  box-shadow: 0 0 15px var(--primary-color) !important;
+}
+
+/* 版权信息样式 */
+.copyright {
+  color: var(--text-color) !important;
+  opacity: 0.8 !important;
+}
+
+/* 导航菜单样式 */
+nav a {
+  color: var(--primary-color) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  transition: all 0.3s ease !important;
+}
+
+nav a:hover {
+  color: var(--secondary-color) !important;
+  text-shadow: 0 0 5px var(--primary-color) !important;
+}
+
+/* 游戏缩略图样式 */
+.game-thumbnail {
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    background: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.game-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.game-thumbnail:hover .game-preview {
+    transform: scale(1.05);
+} 

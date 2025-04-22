@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 - GameTime</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/theme.css">
+    <link rel="stylesheet" href="../styles/game-page.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">GAMETIME</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/#featured">Featured Games</a>
+                <a href="/#categories">Categories</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="game-container">
+        <section class="game-header">
+            <h1>2048</h1>
+            <div class="game-meta">
+                <span class="category">Strategy</span>
+                <span class="rating">★★★★★</span>
+            </div>
+        </section>
+
+        <section class="game-content">
+            <div class="game-preview">
+                <img src="../images/2048-preview.png" alt="2048 Game Preview" class="preview-image">
+            </div>
+
+            <div class="game-info">
+                <div class="game-description">
+                    <h2>Game Description</h2>
+                    <p>2048 is an engaging number puzzle game. In a 4x4 grid, combine identical numbers to reach 2048. The game is simple yet challenging, testing your strategic thinking.</p>
+                </div>
+
+                <div class="game-rules">
+                    <h2>Game Rules</h2>
+                    <ul>
+                        <li>Use arrow keys to move tiles</li>
+                        <li>When two tiles with the same number collide, they merge</li>
+                        <li>After each move, a new tile with value 2 or 4 appears</li>
+                        <li>Game ends when no moves are possible</li>
+                        <li>The ultimate goal is to create a tile with the number 2048</li>
+                    </ul>
+                </div>
+
+                <div class="game-tips">
+                    <h2>Game Tips</h2>
+                    <ul>
+                        <li>Keep your highest number in a corner</li>
+                        <li>Maintain a decreasing sequence of numbers</li>
+                        <li>Avoid scattering small numbers across the board</li>
+                        <li>Plan your merging paths in advance</li>
+                    </ul>
+                </div>
+
+                <div class="game-controls">
+                    <h2>Controls</h2>
+                    <ul>
+                        <li>↑ : Move Up</li>
+                        <li>↓ : Move Down</li>
+                        <li>← : Move Left</li>
+                        <li>→ : Move Right</li>
+                    </ul>
+                </div>
+
+                <a href="../game/2048/index.html" class="start-game-btn">
+                    <span class="btn-text">PLAY NOW</span>
+                    <span class="btn-hover-text">LAUNCH MISSION</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 GameTime.bar - All rights reserved.</p>
+        <p>2048 game originally created by <a href="https://github.com/gabrielecirulli/2048" target="_blank">Gabriele Cirulli</a></p>
+    </footer>
+</body>
+</html> 

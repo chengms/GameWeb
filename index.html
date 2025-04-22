@@ -3,106 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Time - Epic Adventure Game | Play Online</title>
-    <meta name="description" content="Play Game Time, an exciting survival adventure game where you battle against waves of monsters. Experience thrilling gameplay, upgrade your character, and survive in this action-packed online game.">
+    <title>GameTime - Your Ultimate Gaming Hub | Play Free Online Games</title>
+    <meta name="description" content="Discover and play the best free online games at GameTime. Experience high-quality action, strategy, and adventure games. Join millions of players worldwide!">
     <link rel="canonical" href="https://gametime.bar">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LCPVTMFC3Y"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-LCPVTMFC3Y');
-    </script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/theme.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f5f5f7;
+        @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&display=swap');
+        :root {
+            --apple-blue: #007AFF;
+            --apple-dark: #1D1D1F;
+            --apple-gray: #86868B;
+            --apple-light: #F5F5F7;
+            --apple-white: #FFFFFF;
         }
-        .game-container {
-            aspect-ratio: 16/9;
-            max-width: 100%;
-            height: auto;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background-color: var(--apple-light);
+            color: var(--apple-dark);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .game-card {
+            background: var(--apple-white);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .game-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.15);
+        }
+        .apple-button {
+            background: var(--apple-blue);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .apple-button:hover {
+            background: #0066CC;
+            transform: translateY(-1px);
+        }
+        @media (max-width: 640px) {
+            .game-card {
+                border-radius: 16px;
+            }
+        }
+        /* Warning stripe animation */
+        .warning-stripe {
+            background: repeating-linear-gradient(
+                45deg,
+                var(--secondary-color),
+                var(--secondary-color) 10px,
+                #000 10px,
+                #000 20px
+            );
+            animation: stripe-animation 20s linear infinite;
+        }
+        @keyframes stripe-animation {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 50px 50px;
+            }
+        }
+        /* Style for game cards and display elements */
+        .game-card, .featured-game, .game-item {
+            transform: none; /* Remove tilt effect */
         }
     </style>
 </head>
 <body class="min-h-screen">
-    <header class="bg-white shadow-sm">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div class="flex justify-between items-center">
-                <h1 class="text-2xl font-bold text-gray-900">Game Time</h1>
-                <div class="space-x-4">
-                    <a href="#about" class="text-gray-600 hover:text-gray-900">About</a>
-                    <a href="#gameplay" class="text-gray-600 hover:text-gray-900">Gameplay</a>
-                    <a href="#play" class="text-gray-600 hover:text-gray-900">Play Now</a>
+                <h1 class="text-2xl font-bold text-[var(--apple-dark)]">GameTime</h1>
+                <div class="space-x-8 hidden md:flex">
+                    <a href="#featured" class="text-[var(--apple-gray)] hover:text-[var(--apple-blue)] transition-colors">Featured</a>
+                    <a href="#categories" class="text-[var(--apple-gray)] hover:text-[var(--apple-blue)] transition-colors">Categories</a>
+                    <a href="#new" class="text-[var(--apple-gray)] hover:text-[var(--apple-blue)] transition-colors">New Games</a>
                 </div>
+                <button class="md:hidden text-[var(--apple-dark)]">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                    </svg>
+                </button>
             </div>
         </nav>
     </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <section id="hero" class="text-center mb-12">
-            <h2 class="text-4xl font-bold text-gray-900 mb-4">Survive the Monster Invasion</h2>
-            <p class="text-xl text-gray-600 mb-8">Embark on an epic journey of survival in this action-packed adventure where you must fight, upgrade, and survive against endless waves of monsters.</p>
+        <section id="hero" class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-[var(--apple-dark)] mb-4">Play Amazing Games Online</h2>
+            <p class="text-xl text-[var(--apple-gray)] mb-8 max-w-3xl mx-auto leading-relaxed">Discover a world of endless entertainment with our curated collection of high-quality online games. From action-packed adventures to strategic challenges.</p>
         </section>
 
-        <section id="game" class="mb-12">
-            <div class="bg-white rounded-lg shadow-lg p-4">
-                <div class="game-container mx-auto">
-                    <iframe 
-                        src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html" 
-                        class="w-full h-full border-0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
+        <section id="featured" class="mb-16">
+            <h2 class="text-2xl font-bold text-[var(--apple-dark)] mb-8">Featured Games</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Game Card 1 -->
+                <div class="game-card p-6">
+                    <img src="https://placehold.co/400x300" alt="Racing Simulator" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <h3 class="text-xl font-semibold text-[var(--apple-dark)] mb-2">Racing Simulator</h3>
+                    <p class="text-[var(--apple-gray)] mb-6">Experience the thrill of high-speed racing with stunning graphics and realistic physics.</p>
+                    <button class="apple-button text-white px-6 py-3 w-full">Play Now</button>
+                </div>
+                
+                <!-- Game Card 2 -->
+                <div class="game-card p-6">
+                    <img src="https://placehold.co/400x300" alt="Strategy Master" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <h3 class="text-xl font-semibold text-[var(--apple-dark)] mb-2">Strategy Master</h3>
+                    <p class="text-[var(--apple-gray)] mb-6">Build your empire and conquer territories in this engaging strategy game.</p>
+                    <button class="apple-button text-white px-6 py-3 w-full">Play Now</button>
+                </div>
+
+                <!-- Game Card 3 -->
+                <div class="game-card p-6">
+                    <img src="https://placehold.co/400x300" alt="Adventure Quest" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <h3 class="text-xl font-semibold text-[var(--apple-dark)] mb-2">Adventure Quest</h3>
+                    <p class="text-[var(--apple-gray)] mb-6">Embark on an epic journey filled with challenges and discoveries.</p>
+                    <button class="apple-button text-white px-6 py-3 w-full">Play Now</button>
+                </div>
+
+                <!-- 2048 Game Card -->
+                <div class="game-card p-6">
+                    <img src="./images/2048-preview-home.png" alt="2048 Game" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <h3 class="text-xl font-semibold text-[var(--apple-dark)] mb-2">2048</h3>
+                    <p class="text-[var(--apple-gray)] mb-6">An engaging number puzzle game. In a 4x4 grid, combine identical numbers to reach the 2048 tile.</p>
+                    <a href="./pages/2048-game.html" class="apple-button text-white px-6 py-3 w-full block text-center">Learn More</a>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6">About Game Time</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Game Overview</h3>
-                    <p class="text-gray-600">Game Time is an engaging survival game that puts your strategic thinking and reflexes to the test. As waves of monsters approach, you must make quick decisions, upgrade your abilities, and fight for survival.</p>
-                </div>
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Key Features</h3>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2">
-                        <li>Dynamic combat system</li>
-                        <li>Character progression</li>
-                        <li>Multiple monster types</li>
-                        <li>Strategic gameplay</li>
-                        <li>Regular updates</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="gameplay" class="mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6">How to Play</h2>
-            <div class="bg-white rounded-lg shadow-lg p-6">
-                <div class="prose max-w-none">
-                    <p class="text-gray-600 mb-4">Master the art of survival in Game Time with these essential tips:</p>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2">
-                        <li>Use WASD or arrow keys to move your character</li>
-                        <li>Click or use spacebar to attack</li>
-                        <li>Collect experience points to level up</li>
-                        <li>Choose upgrades wisely to enhance your abilities</li>
-                        <li>Stay alert for different monster types and their unique behaviors</li>
-                    </ul>
-                </div>
+        <section id="categories" class="mb-16">
+            <h2 class="text-2xl font-bold text-[var(--apple-dark)] mb-8">Game Categories</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <button class="apple-button text-white px-6 py-4 rounded-xl">Action</button>
+                <button class="apple-button text-white px-6 py-4 rounded-xl">Strategy</button>
+                <button class="apple-button text-white px-6 py-4 rounded-xl">Adventure</button>
+                <button class="apple-button text-white px-6 py-4 rounded-xl">Simulation</button>
             </div>
         </section>
     </main>
 
-    <footer class="bg-white border-t mt-12">
+    <footer class="bg-white border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div class="text-center text-gray-600">
-                <p>&copy; 2025 Game Time. All rights reserved.</p>
+            <div class="text-center text-[var(--apple-gray)]">
+                <p>&copy; 2025 GameTime.bar - All rights reserved.</p>
             </div>
         </div>
     </footer>
