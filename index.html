@@ -15,35 +15,36 @@
             --apple-blue: #007AFF;
             --apple-dark: #1D1D1F;
             --apple-gray: #86868B;
-            --apple-light: #F5F5F7;
-            --apple-white: #FFFFFF;
+            --apple-light: var(--background-color);
+            --apple-white: var(--surface-color);
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
-            background-color: var(--apple-light);
-            color: var(--apple-dark);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
         .game-card {
-            background: var(--apple-white);
+            background: var(--surface-color);
             border-radius: 20px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--border-color);
         }
         .game-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 12px 20px -8px rgba(255, 215, 0, 0.2);
         }
         .apple-button {
-            background: var(--apple-blue);
+            background: var(--secondary-color);
             border-radius: 12px;
             transition: all 0.3s ease;
             font-weight: 500;
+            border: 1px solid var(--border-color);
         }
         .apple-button:hover {
-            background: #0066CC;
+            background: var(--secondary-dark);
             transform: translateY(-1px);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
         }
         @media (max-width: 640px) {
             .game-card {
@@ -76,16 +77,16 @@
     </style>
 </head>
 <body class="min-h-screen">
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <header class="bg-[var(--surface-color)] shadow-sm sticky top-0 z-50 border-b-2 border-[var(--border-color)]">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div class="flex justify-between items-center">
-                <h1 class="text-2xl font-bold text-[var(--apple-dark)]">GameTime</h1>
+                <h1 class="text-2xl font-bold text-[var(--primary-color)]">GameTime</h1>
                 <div class="space-x-8 hidden md:flex">
-                    <a href="#featured" class="text-[var(--apple-gray)] hover:text-[var(--apple-blue)] transition-colors">Featured</a>
-                    <a href="#categories" class="text-[var(--apple-gray)] hover:text-[var(--apple-blue)] transition-colors">Categories</a>
-                    <a href="#new" class="text-[var(--apple-gray)] hover:text-[var(--apple-blue)] transition-colors">New Games</a>
+                    <a href="#featured" class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors">FEATURED</a>
+                    <a href="#categories" class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors">CATEGORIES</a>
+                    <a href="#new" class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors">NEW GAMES</a>
                 </div>
-                <button class="md:hidden text-[var(--apple-dark)]">
+                <button class="md:hidden text-[var(--text-primary)]">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
                     </svg>
@@ -96,61 +97,61 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <section id="hero" class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold text-[var(--apple-dark)] mb-4">Play Amazing Games Online</h2>
-            <p class="text-xl text-[var(--apple-gray)] mb-8 max-w-3xl mx-auto leading-relaxed">Discover a world of endless entertainment with our curated collection of high-quality online games. From action-packed adventures to strategic challenges.</p>
+            <h2 class="text-4xl md:text-5xl font-bold text-[var(--primary-color)] mb-4">Play Amazing Games Online</h2>
+            <p class="text-xl text-[var(--text-secondary)] mb-8 max-w-3xl mx-auto leading-relaxed">Discover a world of endless entertainment with our curated collection of high-quality online games. From action-packed adventures to strategic challenges.</p>
         </section>
 
         <section id="featured" class="mb-16">
-            <h2 class="text-2xl font-bold text-[var(--apple-dark)] mb-8">Featured Games</h2>
+            <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-8">FEATURED GAMES</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Game Card 1 -->
                 <div class="game-card p-6">
                     <img src="https://placehold.co/400x300" alt="Racing Simulator" class="w-full h-48 object-cover rounded-xl mb-6">
-                    <h3 class="text-xl font-semibold text-[var(--apple-dark)] mb-2">Racing Simulator</h3>
-                    <p class="text-[var(--apple-gray)] mb-6">Experience the thrill of high-speed racing with stunning graphics and realistic physics.</p>
-                    <button class="apple-button text-white px-6 py-3 w-full">Play Now</button>
+                    <h3 class="text-xl font-semibold text-[var(--text-primary)] mb-2">Racing Simulator</h3>
+                    <p class="text-[var(--text-secondary)] mb-6">Experience the thrill of high-speed racing with stunning graphics and realistic physics.</p>
+                    <button class="apple-button text-[var(--text-primary)] px-6 py-3 w-full">Play Now</button>
                 </div>
                 
                 <!-- Game Card 2 -->
                 <div class="game-card p-6">
                     <img src="https://placehold.co/400x300" alt="Strategy Master" class="w-full h-48 object-cover rounded-xl mb-6">
-                    <h3 class="text-xl font-semibold text-[var(--apple-dark)] mb-2">Strategy Master</h3>
-                    <p class="text-[var(--apple-gray)] mb-6">Build your empire and conquer territories in this engaging strategy game.</p>
-                    <button class="apple-button text-white px-6 py-3 w-full">Play Now</button>
+                    <h3 class="text-xl font-semibold text-[var(--text-primary)] mb-2">Strategy Master</h3>
+                    <p class="text-[var(--text-secondary)] mb-6">Build your empire and conquer territories in this engaging strategy game.</p>
+                    <button class="apple-button text-[var(--text-primary)] px-6 py-3 w-full">Play Now</button>
                 </div>
 
                 <!-- Game Card 3 -->
                 <div class="game-card p-6">
                     <img src="https://placehold.co/400x300" alt="Adventure Quest" class="w-full h-48 object-cover rounded-xl mb-6">
-                    <h3 class="text-xl font-semibold text-[var(--apple-dark)] mb-2">Adventure Quest</h3>
-                    <p class="text-[var(--apple-gray)] mb-6">Embark on an epic journey filled with challenges and discoveries.</p>
-                    <button class="apple-button text-white px-6 py-3 w-full">Play Now</button>
+                    <h3 class="text-xl font-semibold text-[var(--text-primary)] mb-2">Adventure Quest</h3>
+                    <p class="text-[var(--text-secondary)] mb-6">Embark on an epic journey filled with challenges and discoveries.</p>
+                    <button class="apple-button text-[var(--text-primary)] px-6 py-3 w-full">Play Now</button>
                 </div>
 
                 <!-- 2048 Game Card -->
                 <div class="game-card p-6">
                     <img src="./images/2048-preview-home.png" alt="2048 Game" class="w-full h-48 object-cover rounded-xl mb-6">
-                    <h3 class="text-xl font-semibold text-[var(--apple-dark)] mb-2">2048</h3>
-                    <p class="text-[var(--apple-gray)] mb-6">An engaging number puzzle game. In a 4x4 grid, combine identical numbers to reach the 2048 tile.</p>
-                    <a href="./pages/2048-game.html" class="apple-button text-white px-6 py-3 w-full block text-center">Learn More</a>
+                    <h3 class="text-xl font-semibold text-[var(--text-primary)] mb-2">2048</h3>
+                    <p class="text-[var(--text-secondary)] mb-6">An engaging number puzzle game. In a 4x4 grid, combine identical numbers to reach the 2048 tile.</p>
+                    <a href="./pages/2048-game.html" class="apple-button text-[var(--text-primary)] px-6 py-3 w-full block text-center">Learn More</a>
                 </div>
             </div>
         </section>
 
         <section id="categories" class="mb-16">
-            <h2 class="text-2xl font-bold text-[var(--apple-dark)] mb-8">Game Categories</h2>
+            <h2 class="text-2xl font-bold text-[var(--primary-color)] mb-8">GAME CATEGORIES</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <button class="apple-button text-white px-6 py-4 rounded-xl">Action</button>
-                <button class="apple-button text-white px-6 py-4 rounded-xl">Strategy</button>
-                <button class="apple-button text-white px-6 py-4 rounded-xl">Adventure</button>
-                <button class="apple-button text-white px-6 py-4 rounded-xl">Simulation</button>
+                <button class="apple-button text-[var(--text-primary)] px-6 py-4 rounded-xl">Action</button>
+                <button class="apple-button text-[var(--text-primary)] px-6 py-4 rounded-xl">Strategy</button>
+                <button class="apple-button text-[var(--text-primary)] px-6 py-4 rounded-xl">Adventure</button>
+                <button class="apple-button text-[var(--text-primary)] px-6 py-4 rounded-xl">Simulation</button>
             </div>
         </section>
     </main>
 
-    <footer class="bg-white border-t border-gray-200">
+    <footer class="bg-[var(--surface-color)] border-t-2 border-[var(--border-color)]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div class="text-center text-[var(--apple-gray)]">
+            <div class="text-center text-[var(--text-secondary)]">
                 <p>&copy; 2025 GameTime.bar - All rights reserved.</p>
             </div>
         </div>

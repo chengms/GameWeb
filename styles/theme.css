@@ -1,30 +1,33 @@
 /* Global Theme Variables */
 :root {
     /* Primary Colors */
-    --primary-color: #2563eb;
-    --primary-dark: #1d4ed8;
-    --primary-light: #60a5fa;
+    --primary-color: #ffd700;  /* 金色 */
+    --primary-dark: #ccac00;   /* 深金色 */
+    --primary-light: #fff4b3;  /* 浅金色 */
 
     /* Secondary Colors */
-    --secondary-color: #10b981;
-    --secondary-dark: #059669;
-    --secondary-light: #34d399;
+    --secondary-color: #c41e3a; /* 红警特征红 */
+    --secondary-dark: #a01830; /* 深红色 */
+    --secondary-light: #ff4d4d; /* 浅红色 */
 
     /* Neutral Colors */
-    --background-color: #f3f4f6;
-    --surface-color: #ffffff;
-    --text-primary: #111827;
-    --text-secondary: #4b5563;
+    --background-color: #0a0a0a; /* 深黑色背景 */
+    --surface-color: #1a1a1a;   /* 卡片背景色 */
+    --text-primary: #ffffff;    /* 主要文字颜色 */
+    --text-secondary: #b3b3b3;  /* 次要文字颜色 */
 
     /* Accent Colors */
-    --accent-color: #f59e0b;
-    --accent-dark: #d97706;
-    --accent-light: #fbbf24;
+    --accent-color: #ff4d4d;    /* 警示红 */
+    --accent-dark: #cc0000;     /* 深警示红 */
+    --accent-light: #ff8080;    /* 浅警示红 */
+
+    /* Border Colors */
+    --border-color: #ffd700;    /* 金色边框 */
 
     /* System Colors */
-    --error-color: #ef4444;
-    --success-color: #22c55e;
-    --warning-color: #f59e0b;
+    --error-color: #ff4d4d;
+    --success-color: #00cc66;
+    --warning-color: #ffd700;
     --info-color: #3b82f6;
 
     /* Typography */
@@ -46,9 +49,9 @@
     --border-radius-lg: 1rem;
 
     /* Shadows */
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 2px 4px rgba(255, 215, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(255, 215, 0, 0.15);
+    --shadow-lg: 0 8px 16px rgba(255, 215, 0, 0.2);
 
     /* Transitions */
     --transition-fast: 150ms ease-in-out;
@@ -65,6 +68,119 @@ body {
     background-color: var(--background-color);
     margin: 0;
     padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--surface-color);
+    border-bottom: 2px solid var(--border-color);
+    padding: 1rem 2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    color: var(--primary-color) !important;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-primary) !important;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.nav-links a:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Game Card Styles */
+.game-card {
+    background: var(--surface-color);
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+}
+
+.game-info {
+    background: rgba(26, 26, 26, 0.95);
+}
+
+.game-info h3 {
+    color: var(--primary-color);
+}
+
+.game-info p {
+    color: var(--text-secondary);
+}
+
+.play-now-btn {
+    background: linear-gradient(145deg, var(--secondary-color), var(--secondary-dark));
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.play-now-btn:hover {
+    background: var(--secondary-color);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Category Card Styles */
+.category-card {
+    background: linear-gradient(145deg, var(--surface-color), #222222);
+    border: 1px solid var(--border-color);
+}
+
+.category-card:hover {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to bottom, rgba(26, 26, 26, 0.95), rgba(10, 10, 10, 0.9));
+    border-bottom: 2px solid var(--border-color);
+}
+
+.hero h1 {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.hero p {
+    color: var(--text-secondary);
+}
+
+/* Section Headers */
+section h2 {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+section h2::after {
+    background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+}
+
+/* Footer */
+footer {
+    background-color: var(--surface-color);
+    border-top: 2px solid var(--border-color);
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--text-secondary);
 }
 
 /* Typography Styles */
@@ -394,4 +510,173 @@ nav a:hover {
 
 .game-thumbnail:hover .game-preview {
     transform: scale(1.05);
+}
+
+/* Game Grid Layout */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* Game Card Styles */
+.game-card {
+    background: var(--surface-color);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid var(--border-color);
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.game-thumbnail {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.game-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-thumbnail img {
+    transform: scale(1.05);
+}
+
+.game-info {
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.game-info h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-primary);
+}
+
+.game-info p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.play-now-btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius-md);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-family: var(--font-primary);
+}
+
+.play-now-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Category Grid */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.category-card {
+    background: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-md);
+    text-align: center;
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.category-card h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-primary);
+}
+
+.category-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Coming Soon Label */
+.coming-soon-label {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
+    margin-bottom: 3rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-family: var(--font-primary);
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Section Headers */
+section h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: var(--font-primary);
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--accent-color);
 } 
